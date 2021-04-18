@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
-const PORT = 8000 || process.env.PORT
 const meetings = require('./models/meetings')
 const cors = require('cors')
 
@@ -59,4 +58,4 @@ app.delete('/delete-meeting/:id', async (req, res) => {
   }
 })
 
-app.listen(PORT, () => console.log(`Server listening at port: ${PORT}`))
+app.listen(process.env.PORT || 5000, () => console.log(`Server listening at port: ${process.env.PORT || 5000}`))
